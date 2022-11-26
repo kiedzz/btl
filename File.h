@@ -10,6 +10,11 @@ private:
     ifstream readFile;
 
 public:
+    /**
+     * @brief Ghi dữ liệu vào file
+     *
+     * @param data
+     */
     void writeData(string data)
     {
         this->writeFile.open("students.txt", ios_base::app);

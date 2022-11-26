@@ -12,12 +12,20 @@ private:
     File *file;
 
 public:
+    /**
+     * @brief Construct a new Student Linked List object
+     *
+     */
     StudentLinkedList()
     {
         this->head = NULL;
         this->file = new File();
     }
 
+    /**
+     * @brief Destroy the Student Linked List object
+     *
+     */
     ~StudentLinkedList()
     {
         this->deleteAllStudents();
@@ -25,6 +33,12 @@ public:
         delete this->file;
     }
 
+    /**
+     * @brief Thêm 1 học sinh vào cuối
+     *
+     * @param newStudent
+     * @return StudentLinkedList&
+     */
     StudentLinkedList &pushNewStudent(Student newStudent)
     {
         Node *newNode = new Node();
@@ -47,6 +61,13 @@ public:
         return *this;
     }
 
+    /**
+     * @brief Thêm 1 học sinh vào vị trí bất kì
+     *
+     * @param index
+     * @param newStudent
+     * @return StudentLinkedList&
+     */
     StudentLinkedList &insertNewStudentAt(int index, Student newStudent)
     {
         Node *newNode = new Node();
@@ -94,6 +115,12 @@ public:
         return *this;
     }
 
+    /**
+     * @brief Xóa các học sinh của 1 lớp
+     *
+     * @param className
+     * @return StudentLinkedList&
+     */
     StudentLinkedList &deleteStudent(string className)
     {
         if (this->head != NULL)
@@ -129,6 +156,13 @@ public:
         return *this;
     }
 
+    /**
+     * @brief Tìm kiếm học sinh
+     *
+     * @param studentName
+     * @param className
+     * @return vector<Student>
+     */
     vector<Student> findStudent(string studentName, string className)
     {
         vector<Student> students;
@@ -145,6 +179,11 @@ public:
         return students;
     }
 
+    /**
+     * @brief Sắp xếp học sinh theo điểm TB giảm dần
+     *
+     * @return StudentLinkedList&
+     */
     StudentLinkedList &sortByScoreAvg()
     {
         int hasNextNode;
@@ -176,6 +215,12 @@ public:
         return *this;
     }
 
+    /**
+     * @brief In ra list học sinh
+     *
+     * @param fields
+     * @param mode
+     */
     void printList(vector<string> fields = {}, int mode = 0)
     {
         Node *currentNode = this->head;
@@ -200,6 +245,10 @@ public:
         cout << endl;
     }
 
+    /**
+     * @brief Xóa tất cả học sinh
+     *
+     */
     void deleteAllStudents()
     {
         Node *currentNode = this->head;
@@ -212,6 +261,11 @@ public:
         }
     }
 
+    /**
+     * @brief Cập nhật tất cả dữ liệu vào file
+     *
+     * @return StudentLinkedList&
+     */
     StudentLinkedList &updateToFile()
     {
         Node *currentNode = this->head;

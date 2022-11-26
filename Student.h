@@ -13,6 +13,10 @@ private:
     float scoreAvg;
 
 public:
+    /**
+     * @brief Create a New Student object
+     *
+     */
     void createNewStudent()
     {
         cout << "Nhap thong tin hoc sinh: " << endl;
@@ -26,6 +30,11 @@ public:
         cin >> this->scoreAvg;
     }
 
+    /**
+     * @brief Get the Student Info object
+     *
+     * @param fields
+     */
     void getStudentInfo(vector<string> fields = {})
     {
         if (fields.size() == 0)
@@ -55,6 +64,11 @@ public:
         cout << endl;
     }
 
+    /**
+     * @brief Get the Classification object
+     *
+     * @return string
+     */
     string getClassification()
     {
         if (this->scoreAvg >= 3.5 && this->scoreAvg < 5)
@@ -72,21 +86,41 @@ public:
         return "N";
     }
 
+    /**
+     * @brief Get the Full Name object
+     *
+     * @return string
+     */
     string getFullName()
     {
         return this->fullName;
     }
 
+    /**
+     * @brief Get the Class Name object
+     *
+     * @return string
+     */
     string getClassName()
     {
         return this->className;
     }
 
+    /**
+     * @brief Get the Phone Number object
+     *
+     * @return string
+     */
     string getPhoneNumber()
     {
         return this->phoneNumber;
     }
 
+    /**
+     * @brief Get the Score Avg object
+     *
+     * @return float
+     */
     float getScoreAvg()
     {
         return this->scoreAvg;
